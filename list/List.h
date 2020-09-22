@@ -24,13 +24,32 @@ private:
     };
 
 public:
+
+public:
     List();
+
+    List(const List &rhs);
+
+    ~List();
+
+    List &operator=(const List &rhs);
+
+    List(List &&rhs);
 
     int size() const;
 
     void clear();
 
     bool empty() const;
+
+    void push_back(const E &x);
+
+private:
+    int theSize;
+    Node *head;
+    Node *tail;
+
+    void init();
 
 };
 
